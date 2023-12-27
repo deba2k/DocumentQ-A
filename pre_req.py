@@ -16,9 +16,9 @@ for i in LIBRARIES:
 
 print("All libraries successfully installed")
 os.system('cls')
-print('#'*100)
 
-os.system('python doc.py')
+print("everything installed successfully")
+print("now you can execute run.py in your venv")
 
 
 

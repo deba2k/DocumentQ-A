@@ -1,15 +1,14 @@
 import os
 import sys
-
-import openai
+import dotenv
 # required accelerate and transformers
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
 
-openai.api_key = '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'
-os.environ["OPENAI_API_KEY"] = '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'
+dotenv.load(".env")
+os.environ["OPENAI_API_KEY"] = dotenv.get("OPEN_AI_API_KEY")
 
 
-def read_pdf(datafile_folder=os.path.dirname(os.path.abspath(sys.argv[0]))+"\\yourPdf"):
+def read_pdf(datafile_folder=os.path.dirname(os.path.abspath(sys.argv[0])) + "\\yourPdf"):
     global documents
     documents = SimpleDirectoryReader(datafile_folder).load_data()
 
